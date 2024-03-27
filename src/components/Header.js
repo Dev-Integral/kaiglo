@@ -12,7 +12,7 @@ import { FaMinus } from "react-icons/fa";
 export const Header = () => {
   return (
     <div>
-      <div className="border-b p-5 pl-10 pr-10">
+      <div className="border-b p-5 pl-8 pr-8">
         <div className="flex justify-between items-center">
           <Airbnb color="#FF5A5F" />
           <div>
@@ -32,7 +32,7 @@ export const Header = () => {
           </span>
         </div>
       </div>
-      <div className="border-b p-3 pl-10 pr-10">
+      <div className="border-b p-3 pl-8 pr-8">
         <div className="flex justify-between items-center">
           <div className="bg-gray-100 rounded-lg flex items-center gap-4">
             <p className="text-white bg-black h-full p-2 rounded-lg">
