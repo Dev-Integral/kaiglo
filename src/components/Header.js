@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Airbnb } from "./Airbnb";
 import { FaUser } from "react-icons/fa";
 import { CgMenuGridR } from "react-icons/cg";
@@ -8,8 +8,10 @@ import { CiFilter } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa";
+import { Filter } from "./modals/Filter";
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       <div className="border-b p-5 pl-8 pr-8">
@@ -65,11 +67,15 @@ export const Header = () => {
               </p>
             </div>
           </div>
-          <span className="text-gray-600 rounded-lg p-3 bg-gray-100">
+          <span
+            className="text-gray-600 rounded-lg p-3 font-bold cursor-pointer bg-gray-100"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <CiFilter size={20} />
           </span>
         </div>
       </div>
+      <Filter isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 };

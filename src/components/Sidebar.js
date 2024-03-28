@@ -21,7 +21,7 @@ export const Sidebar = () => {
         onMouseLeave={() => toggleSidenav()}
         className={`border-r flex flex-col p-5 pl-0 pr-0 justify-start items-center ${
           isOpen ? "w-52" : "w-20"
-        } transition-all duration-300`}
+        } transition-all duration-20`}
       >
         <div
           className={`w-full flex items-center justify-${

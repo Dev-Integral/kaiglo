@@ -3,12 +3,19 @@ import { homes } from "../utils/homes";
 import { IoIosHeartEmpty, IoMdStar } from "react-icons/io";
 
 export const Stays = () => {
-    const [toggleShadow, setToggleShadow] = useState("");
+  const [toggleShadow, setToggleShadow] = useState("");
   return (
     <div className="w-full m-8">
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {homes.map((home, key) => (
-          <div onMouseEnter={()=>setToggleShadow(key)} onMouseLeave={()=> setToggleShadow("")} className={`relative ${toggleShadow === key ? 'shadow-lg' : ''} border rounded-[20px] cursor-pointer`} key={key}>
+          <div
+            onMouseEnter={() => setToggleShadow(key)}
+            onMouseLeave={() => setToggleShadow("")}
+            className={`relative ${
+              toggleShadow === key ? "shadow-lg" : ""
+            } border rounded-[20px] cursor-pointer`}
+            key={key}
+          >
             <span className="absolute right-4 top-4 rounded-full bg-white hover:bg-black hover:text-white cursor-pointer font-bold text-xl p-2">
               <IoIosHeartEmpty />
             </span>
@@ -25,7 +32,9 @@ export const Stays = () => {
                   ${home.amount} /{" "}
                   <span className="bold-none text-gray-500">night</span>
                 </p>
-                <p className="absolute bottom-4 right-5 flex items-center gap-1"><IoMdStar /> {home.star}</p>
+                <p className="absolute bottom-4 right-5 flex items-center gap-1">
+                  <IoMdStar /> {home.star}
+                </p>
               </div>
             </div>
           </div>
