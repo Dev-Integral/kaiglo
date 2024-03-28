@@ -25,12 +25,12 @@ export const Filter = ({ isOpen, setIsOpen }) => {
             <div className="w-1/3 absolute right-0 top-[26%] h-full slide-ins slide-out">
               <Transition.Child
                 as={Fragment}
-                // enter="ease-out duration-300"
-                // enterFrom="opacity-0 scale-95"
-                // enterTo="opacity-100 scale-100"
-                // leave="ease-in duration-200"
-                // leaveFrom="opacity-100 scale-100"
-                // leaveTo="opacity-0 scale-95"
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full  transform bg-white p-3 text-left align-middle shadow-xl">
                   <Dialog.Title as="h3" className="relative p-3">

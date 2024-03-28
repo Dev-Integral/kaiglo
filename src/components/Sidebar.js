@@ -19,9 +19,9 @@ export const Sidebar = () => {
       <div
         onMouseEnter={() => toggleSidenav()}
         onMouseLeave={() => toggleSidenav()}
-        className={`border-r flex flex-col p-5 pl-0 pr-0 justify-start items-center ${
+        className={`border-r flex flex-col p-5 pl-0 pr-0 justify-center items-center ${
           isOpen ? "w-52" : "w-20"
-        } transition-all duration-20`}
+        } transition-all duration-300`}
       >
         <div
           className={`w-full flex items-center justify-${

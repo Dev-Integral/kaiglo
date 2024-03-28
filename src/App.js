@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="">
       <Header />
-      <div className="flex">
+      <div id="per" className="flex">
         <Sidebar />
         <Stays />
       </div>

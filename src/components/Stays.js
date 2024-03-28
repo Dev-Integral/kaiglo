@@ -1,20 +1,31 @@
 import React, { useState } from "react";
 import { homes } from "../utils/homes";
 import { IoIosHeartEmpty, IoMdStar } from "react-icons/io";
+import { Details } from "./modals/Details";
 
 export const Stays = () => {
   const [toggleShadow, setToggleShadow] = useState("");
+  const [openDetails, setOpenDetails] = useState(false);
+  const [selectedHome, setSelectedHome] = useState({});
+
+  const handleClick = (home) => {
+    document.body.style.overflow = 'hidden';
+    setSelectedHome(home);
+    setOpenDetails(!openDetails);
+  };
+
   return (
     <div className="w-full m-8">
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div id="stays" className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {homes.map((home, key) => (
           <div
             onMouseEnter={() => setToggleShadow(key)}
             onMouseLeave={() => setToggleShadow("")}
+            onClick={() => handleClick(home)}
+            key={key}
             className={`relative ${
               toggleShadow === key ? "shadow-lg" : ""
             } border rounded-[20px] cursor-pointer`}
-            key={key}
           >
             <span className="absolute right-4 top-4 rounded-full bg-white hover:bg-black hover:text-white cursor-pointer font-bold text-xl p-2">
               <IoIosHeartEmpty />
@@ -40,6 +51,12 @@ export const Stays = () => {
           </div>
         ))}
       </div>
+      <Details
+        selectedHome={selectedHome}
+        setSelectedHome={setSelectedHome}
+        openDetails={openDetails}
+        setOpenDetails={setOpenDetails}
+      />
     </div>
   );
 };
